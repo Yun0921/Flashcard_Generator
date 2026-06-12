@@ -1,0 +1,52 @@
+[
+  {
+    "front": "What is the central dogma of statistics?",
+    "back": "The analysis of a small random sample enables drawing inferences about the entire population.",
+    "starred": true
+  },
+  {
+    "front": "What are the three main components of statistical thinking?",
+    "back": "Probability theory, Descriptive statistics, and Inferential statistics.",
+    "starred": false
+  },
+  {
+    "front": "Describe the frequentist interpretation of probability.",
+    "back": "Probability is the observed relative frequency of an event in an infinite number of repeated trials. It is not applicable to single outcomes.",
+    "starred": false
+  },
+  {
+    "front": "Describe the Bayesian interpretation of probability.",
+    "back": "Probability is an agent’s subjective degree of belief or state of knowledge. It is applicable to any statement, even without a random process.",
+    "starred": false
+  },
+  {
+    "front": "What is a literal population in statistics?",
+    "back": "A real, countable group of individuals from which a sample is literally drawn, as in U.S. exit polls.",
+    "starred": false
+  },
+  {
+    "front": "What is a virtual population in statistics?",
+    "back": "An abstract set of all values obtainable by repeating the same measurement procedure under identical conditions, often used to model measurement noise.",
+    "starred": false
+  },
+  {
+    "front": "What is a metaphorical population in statistics?",
+    "back": "An imaginary set of alternative realisations if the same data-generating situation was repeated, used to apply probability and statistics even with complete data.",
+    "starred": true
+  },
+  {
+    "front": "What is the rule for the bounds of probability for any event A?",
+    "back": "0 ≤ P(A) ≤ 1.",
+    "starred": false
+  },
+  {
+    "front": "What is the total probability rule (sum rule)?",
+    "back": "The sum of the probabilities of all possible outcomes in a sample space must equal 1: Σ P(ω) = 1.",
+    "starred": false
+  },
+  {
+    "front": "What is the addition rule for the union of two events A and B?",
+    "back": "P(A∪B) = P(A) + P(B) - P(A∩B). If A and B are mutually exclusive, it simplifies to P(A∪B) = P(A) + P(B).",
+    "starred": false
+  }
+]

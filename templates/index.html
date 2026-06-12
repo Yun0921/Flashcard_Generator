@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>AI Flashcard Generator</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: #f5f5f5;
+            color: #222;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .layout {
+            display: flex;
+            height: 100vh;
+        }
+
+        .sidebar {
+            width: 25%;
+            min-width: 280px;
+            background: #ffffff;
+            padding: 24px;
+            overflow-y: auto;
+            border-right: 1px solid #ddd;
+        }
+
+        .main {
+            width: 75%;
+            padding: 24px;
+            overflow-y: auto;
+            height: 100vh;
+        }
+
+        h1 {
+            font-size: 26px;
+            margin-top: 0;
+        }
+
+        h2 {
+            font-size: 18px;
+            margin-top: 24px;
+        }
+
+        form {
+            margin-bottom: 28px;
+        }
+
+        label {
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        input, select, button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 8px;
+            margin-bottom: 16px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            background: #222;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background: #444;
+        }
+
+        .selected-files {
+            font-size: 13px;
+            color: #444;
+            background: #f0f0f0;
+            padding: 10px;
+            border-radius: 8px;
+            margin-top: -8px;
+            margin-bottom: 16px;
+            line-height: 1.5;
+        }
+
+        .selected-files:empty {
+            display: none;
+        }
+
+        .error {
+            background: #ffe0e0;
+            color: #900;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .success {
+            background: #e1ffe1;
+            color: #075c07;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .editing-info {
+            background: #eef3ff;
+            color: #24448f;
+            padding: 12px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+            padding-bottom: 40px;
+        }
+
+        .flashcard {
+            position: relative;
+            height: 220px;
+            perspective: 1000px;
+            cursor: pointer;
+        }
+
+        .inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+
+        .flashcard.flipped .inner {
+            transform: rotateY(180deg);
+        }
+
+        .front, .back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            padding: 20px;
+            border-radius: 18px;
+            backface-visibility: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            line-height: 1.5;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        .front {
+            background: white;
+            font-weight: bold;
+        }
+
+        .back {
+            background: #fff3c4;
+            transform: rotateY(180deg);
+        }
+
+        .star-button {
+            position: absolute;
+            top: 10px;
+            right: 12px;
+            z-index: 10;
+            width: auto;
+            padding: 0;
+            margin: 0;
+            border: none;
+            background: transparent;
+            color: #bbb;
+            font-size: 28px;
+            line-height: 1;
+            cursor: pointer;
+        }
+
+        .star-button:hover {
+            background: transparent;
+            color: #f0b400;
+        }
+
+        .star-button.starred {
+            color: #f0b400;
+        }
+
+        .hint {
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .empty-state {
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #777;
+            text-align: center;
+            font-size: 18px;
+        }
+
+        .save-form {
+            background: transparent;
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 800px) {
+            body {
+                overflow: auto;
+            }
+
+            .layout {
+                flex-direction: column;
+                height: auto;
+            }
+
+            .sidebar {
+                width: 100%;
+                min-width: unset;
+                height: auto;
+                border-right: none;
+                border-bottom: 1px solid #ddd;
+            }
+
+            .main {
+                width: 100%;
+                height: auto;
+                overflow: visible;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="layout">
+
+        <aside class="sidebar">
+            <h1>AI Flashcard Generator</h1>
+
+            <h2>Generate New Flashcards</h2>
+
+            <form method="POST" enctype="multipart/form-data">
+                <input type="hidden" name="action" value="generate">
+
+                <label>Upload lecture notes:</label>
+                <input
+                    type="file"
+                    id="notes-input"
+                    name="notes"
+                    multiple
+                    accept=".pdf,.txt,.md"
+                    required
+                >
+
+                <div id="selected-notes" class="selected-files"></div>
+
+                <label>Number of flashcards:</label>
+                <input type="number" name="max_cards" value="10" min="1" max="50">
+
+                <label>Difficulty:</label>
+                <select name="difficulty">
+                    <option value="easy">Easy</option>
+                    <option value="medium" selected>Medium</option>
+                    <option value="hard">Hard</option>
+                </select>
+
+                <label>Gemini model:</label>
+                <select name="model">
+                    {% for value, label in models %}
+                        <option value="{{ value }}">
+                            {{ label }}
+                        </option>
+                    {% endfor %}
+                </select>
+
+                <button type="submit">Generate Flashcards</button>
+            </form>
+
+            <h2>Upload Saved Flashcards</h2>
+
+            <form method="POST" enctype="multipart/form-data">
+                <input type="hidden" name="action" value="upload_flashcards">
+
+                <label>Upload previous flashcards JSON:</label>
+                <input
+                    type="file"
+                    id="json-input"
+                    name="flashcard_file"
+                    accept=".json"
+                    required
+                >
+
+                <div id="selected-json" class="selected-files"></div>
+
+                <button type="submit">Load Flashcards</button>
+            </form>
+        </aside>
+
+        <main class="main">
+            {% if error %}
+                <div class="error">
+                    Error: {{ error }}
+                </div>
+            {% endif %}
+
+            {% if saved_file %}
+                <div class="success">
+                    Flashcards saved successfully to: {{ saved_file }}
+                </div>
+            {% endif %}
+
+            {% if cards %}
+                {% if original_filename %}
+                    <div class="editing-info">
+                        Currently editing: {{ original_filename }}<br>
+                        Saving will overwrite this file in the outputs folder.
+                    </div>
+                {% else %}
+                    <div class="editing-info">
+                        This is a newly generated deck.<br>
+                        Saving will create a new file in the outputs folder.
+                    </div>
+                {% endif %}
+
+                <h2>Flashcards</h2>
+                <p class="hint">
+                    Click a card to flip it. Click the star to mark questions you often forget.
+                </p>
+
+                <form method="POST" class="save-form" onsubmit="updateCardsJsonBeforeSubmit()">
+                    <input type="hidden" name="action" value="save_flashcards">
+                    <input type="hidden" name="original_filename" value="{{ original_filename or '' }}">
+                    <input type="hidden" id="cards-json" name="cards_json" value='{{ cards | tojson }}'>
+
+                    {% if original_filename %}
+                        <button type="submit">Save and Overwrite Original File</button>
+                    {% else %}
+                        <button type="submit">Save as New Flashcards File</button>
+                    {% endif %}
+                </form>
+
+                <div class="cards">
+                    {% for card in cards %}
+                        <div class="flashcard"
+                             data-index="{{ loop.index0 }}"
+                             data-front="{{ card.front }}"
+                             data-back="{{ card.back }}"
+                             data-starred="{{ 'true' if card.starred else 'false' }}"
+                             onclick="flipCard(event, this)">
+
+                            <button class="star-button {% if card.starred %}starred{% endif %}"
+                                    type="button"
+                                    onclick="toggleStar(event, this)">
+                                ★
+                            </button>
+
+                            <div class="inner">
+                                <div class="front">
+                                    {{ card.front }}
+                                </div>
+                                <div class="back">
+                                    {{ card.back }}
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            {% else %}
+                <div class="empty-state">
+                    <p>
+                        Upload lecture notes or load saved flashcards.<br>
+                        Your flashcards will appear here.
+                    </p>
+                </div>
+            {% endif %}
+        </main>
+
+    </div>
+
+    <script>
+        function showSelectedFiles(inputId, displayId) {
+            const input = document.getElementById(inputId);
+            const display = document.getElementById(displayId);
+
+            if (!input || !display) {
+                return;
+            }
+
+            input.addEventListener("change", function() {
+                display.innerHTML = "";
+
+                if (this.files.length === 0) {
+                    return;
+                }
+
+                const title = document.createElement("div");
+                title.textContent = "Selected files (" + this.files.length + "):";
+                title.style.fontWeight = "bold";
+                title.style.marginBottom = "6px";
+                display.appendChild(title);
+
+                for (const file of this.files) {
+                    const item = document.createElement("div");
+                    item.textContent = "📄 " + file.name;
+                    display.appendChild(item);
+                }
+            });
+        }
+
+        showSelectedFiles("notes-input", "selected-notes");
+        showSelectedFiles("json-input", "selected-json");
+
+        function flipCard(event, cardElement) {
+            if (event.target.classList.contains("star-button")) {
+                return;
+            }
+
+            cardElement.classList.toggle("flipped");
+        }
+
+        function toggleStar(event, starButton) {
+            event.stopPropagation();
+
+            const cardElement = starButton.closest(".flashcard");
+            const isStarred = cardElement.dataset.starred === "true";
+
+            cardElement.dataset.starred = isStarred ? "false" : "true";
+            starButton.classList.toggle("starred");
+        }
+
+        function updateCardsJsonBeforeSubmit() {
+            const cardElements = document.querySelectorAll(".flashcard");
+            const cards = [];
+
+            cardElements.forEach(function(cardElement) {
+                cards.push({
+                    front: cardElement.dataset.front,
+                    back: cardElement.dataset.back,
+                    starred: cardElement.dataset.starred === "true"
+                });
+            });
+
+            document.getElementById("cards-json").value = JSON.stringify(cards);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+[
+  {
+    "front": "What are the three main components of statistical thinking?",
+    "back": "Probability theory, descriptive statistics, and inferential statistics.",
+    "starred": false
+  },
+  {
+    "front": "What is the central dogma of statistics?",
+    "back": "The analysis of a small random sample enables drawing inferences about the entire population.",
+    "starred": true
+  },
+  {
+    "front": "Describe the frequentist interpretation of probability.",
+    "back": "Observed relative frequency of an event in an infinite number of repeated trials. Not applicable to single outcomes.",
+    "starred": false
+  },
+  {
+    "front": "Describe the Bayesian interpretation of probability.",
+    "back": "An agent’s subjective degree of belief or state of knowledge. Applicable to any statement, even without a random process.",
+    "starred": false
+  },
+  {
+    "front": "What are the three types of populations discussed in the context of statistics?",
+    "back": "Literal population, virtual population, and metaphorical population.",
+    "starred": false
+  },
+  {
+    "front": "What is the addition rule for probability, and when does it simplify?",
+    "back": "P(A∪B) = P(A) + P(B) - P(A∩B). It simplifies to P(A∪B) = P(A) + P(B) if A and B are mutually exclusive.",
+    "starred": false
+  },
+  {
+    "front": "What is the multiplication rule for probability, and when does it simplify?",
+    "back": "P(A∩B) = P(A)·P(B|A). It simplifies to P(A∩B) = P(A)·P(B) if A and B are independent.",
+    "starred": false
+  },
+  {
+    "front": "What is conditional probability, and how is it calculated?",
+    "back": "The probability of event B given that event A has already occurred, calculated as P(B|A) = P(A,B) / P(A).",
+    "starred": false
+  },
+  {
+    "front": "State Bayes' Theorem.",
+    "back": "P(B|A) = [P(A|B)P(B)] / P(A)",
+    "starred": false
+  },
+  {
+    "front": "What does it mean for two events A and B to be conditionally independent given event C?",
+    "back": "P(A,B|C) = P(A|C)P(B|C). This means that once C is known, learning B provides no additional information about A.",
+    "starred": false
+  }
+]

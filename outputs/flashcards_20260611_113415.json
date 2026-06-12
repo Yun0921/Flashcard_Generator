@@ -1,0 +1,52 @@
+[
+  {
+    "front": "What are the two main approaches mentioned for modeling permafrost distribution?",
+    "back": "The two main approaches are Naive Bayes and Logistic Regression.",
+    "starred": false
+  },
+  {
+    "front": "What is the primary goal of predictive modeling in machine learning?",
+    "back": "The primary goal is to correctly predict new, unseen instances, which is referred to as having high generalization ability.",
+    "starred": true
+  },
+  {
+    "front": "Why is it important to assess a model's generalization capability?",
+    "back": "It is important to assess generalization capability to ensure the model performs well on unseen data and does not overfit the training data.",
+    "starred": false
+  },
+  {
+    "front": "What is the 'generalization gap' in machine learning?",
+    "back": "The generalization gap is the difference between the training error and the expected error on new, unseen data (∆E = E_new - E_train). It is closely related to overfitting/underfitting.",
+    "starred": false
+  },
+  {
+    "front": "What are the three sets data is typically split into for model evaluation?",
+    "back": "The data is typically split into a training set, a validation set (for hyperparameter tuning), and a test set (for final performance measurement).",
+    "starred": false
+  },
+  {
+    "front": "What is k-fold cross-validation?",
+    "back": "k-fold cross-validation is a technique to estimate generalization error by partitioning the training data into k folds, using one fold as a validation set and the rest for training, then averaging the results over k rounds.",
+    "starred": false
+  },
+  {
+    "front": "What is the core assumption of the Naive Bayes classifier regarding features?",
+    "back": "The Naive Bayes classifier assumes that features are conditionally independent given the class, which allows for the factorization of the likelihood.",
+    "starred": false
+  },
+  {
+    "front": "What is the purpose of feature engineering in the ML workflow?",
+    "back": "Feature engineering is the process of adjusting the representation of raw data to improve the efficacy of ML algorithms by capturing underlying data structures and tailoring them to the algorithm.",
+    "starred": false
+  },
+  {
+    "front": "What are the three main task groups within feature engineering?",
+    "back": "The three main task groups are: Enhancing features (improving existing features), Expanding features (creating new features), and Reducing features (shrinking the feature space).",
+    "starred": false
+  },
+  {
+    "front": "In the context of permafrost prediction, what is the supervised ML problem described?",
+    "back": "The problem is to predict where the ground is cold enough for permafrost (T_g ≤ 0°C year-round) given input variables like air temperature and sunshine hours.",
+    "starred": false
+  }
+]

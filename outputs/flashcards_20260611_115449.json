@@ -1,0 +1,27 @@
+[
+  {
+    "front": "What is the central dogma of statistics?",
+    "back": "The analysis of a small random sample enables drawing inferences about the entire population.",
+    "starred": false
+  },
+  {
+    "front": "What are the three main components of statistical thinking?",
+    "back": "Probability theory, descriptive statistics, and inferential statistics.",
+    "starred": true
+  },
+  {
+    "front": "What are the three main interpretations of probability?",
+    "back": "Propensity (a property of a system), Frequentist (long-run frequency), and Bayesian (degree of belief).",
+    "starred": false
+  },
+  {
+    "front": "What is the difference between a literal population and a virtual population?",
+    "back": "A literal population is a real, countable group from which samples are drawn, while a virtual population conceptualizes repeated measurements as draws from a hidden theoretical distribution due to finite precision.",
+    "starred": false
+  },
+  {
+    "front": "What is the addition rule for probabilities?",
+    "back": "P(A∪B) = P(A) + P(B) - P(A∩B). If A and B are mutually exclusive, it simplifies to P(A∪B) = P(A) + P(B).",
+    "starred": false
+  }
+]

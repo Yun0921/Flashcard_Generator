@@ -1,0 +1,27 @@
+[
+  {
+    "front": "什麼是人工智慧（AI）？",
+    "back": "讓電腦系統能夠執行通常需要人類智能的任務，例如理解語言、辨識影像、做決策與解決問題。",
+    "starred": false
+  },
+  {
+    "front": "機器學習（Machine Learning）與人工智慧（AI）的關係為何？",
+    "back": "機器學習是人工智慧的一個子領域，其核心思想是讓電腦從資料中自己學習規律，而非直接被告知每一步驟。",
+    "starred": false
+  },
+  {
+    "front": "深度學習（Deep Learning）與機器學習（Machine Learning）的關係為何？",
+    "back": "深度學習是機器學習的一種，使用多層神經網路來處理複雜資料，在影像、語音和自然語言處理任務上表現出色。",
+    "starred": false
+  },
+  {
+    "front": "監督式學習（Supervised Learning）的訓練資料有何特點？",
+    "back": "使用有標籤的資料進行訓練，每筆資料包含輸入（特徵）和正確答案（標籤）。",
+    "starred": false
+  },
+  {
+    "front": "非監督式學習（Unsupervised Learning）的訓練資料有何特點？",
+    "back": "使用沒有標籤的資料，讓模型自己發現資料中的結構或模式。",
+    "starred": false
+  }
+]

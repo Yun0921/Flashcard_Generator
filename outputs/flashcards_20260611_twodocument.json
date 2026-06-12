@@ -1,0 +1,52 @@
+[
+  {
+    "front": "What are the three main components of statistical thinking?",
+    "back": "Probability theory, descriptive statistics, and inferential statistics.",
+    "starred": false
+  },
+  {
+    "front": "What is the central dogma of statistics?",
+    "back": "The analysis of a small random sample enables drawing inferences about the entire population.",
+    "starred": true
+  },
+  {
+    "front": "Describe the frequentist interpretation of probability.",
+    "back": "The observed relative frequency of an event in an infinite number of repeated trials.",
+    "starred": false
+  },
+  {
+    "front": "Describe the Bayesian interpretation of probability.",
+    "back": "An agent's subjective degree of belief or state of knowledge.",
+    "starred": false
+  },
+  {
+    "front": "What are the three types of populations discussed in the notes?",
+    "back": "Literal, virtual, and metaphorical populations.",
+    "starred": false
+  },
+  {
+    "front": "What is the addition rule for probabilities when events A and B are mutually exclusive?",
+    "back": "P(A∪B) = P(A) + P(B)",
+    "starred": false
+  },
+  {
+    "front": "What is the multiplication rule for probabilities when events A and B are independent?",
+    "back": "P(A∩B) = P(A) · P(B)",
+    "starred": false
+  },
+  {
+    "front": "What is the formula for conditional probability P(B|A)?",
+    "back": "P(B|A) = P(A,B) / P(A)",
+    "starred": false
+  },
+  {
+    "front": "State Bayes' Theorem.",
+    "back": "P(B|A) = P(A|B)P(B) / P(A)",
+    "starred": false
+  },
+  {
+    "front": "What does it mean for two events A and B to be conditionally independent given event C?",
+    "back": "P(A,B|C) = P(A|C)P(B|C), meaning that once C is known, learning B provides no additional information about A.",
+    "starred": false
+  }
+]

@@ -1,0 +1,27 @@
+[
+  {
+    "front": "What is the core assumption of the Naive Bayes classifier regarding features?",
+    "back": "The Naive Bayes classifier assumes that features are conditionally independent given the class. This allows for the factorization of the likelihood, which is a significant modeling shortcut.",
+    "starred": false
+  },
+  {
+    "front": "What is the primary goal of predictive modeling in machine learning?",
+    "back": "The primary goal of predictive modeling is to correctly predict new, unseen instances, which is assessed by a model's generalization ability.",
+    "starred": true
+  },
+  {
+    "front": "What is the generalization gap in machine learning?",
+    "back": "The generalization gap is the difference between the training error and the expected error on new, unseen data (∆E = E_new - E_train). It is closely related to overfitting.",
+    "starred": false
+  },
+  {
+    "front": "What are the three sets data is typically split into for model evaluation?",
+    "back": "The data is split into a training set (for training the model), a validation set (for tuning hyperparameters), and a test set (for measuring generalization performance).",
+    "starred": false
+  },
+  {
+    "front": "What are the three main task groups within feature engineering?",
+    "back": "The three task groups are: Enhancing features (improving existing features without changing their number), Expanding features (creating new features from existing ones), and Reducing features (shrinking the feature space).",
+    "starred": false
+  }
+]

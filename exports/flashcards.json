@@ -1,0 +1,42 @@
+[
+  {
+    "front": "What is the central dogma of statistics?",
+    "back": "The analysis of a small random sample enables drawing inferences about the entire population."
+  },
+  {
+    "front": "What are the three main components of statistical thinking?",
+    "back": "Probability theory, Descriptive statistics, and Inferential statistics."
+  },
+  {
+    "front": "What is the propensity interpretation of probability?",
+    "back": "Probability is a physical, inherent disposition or tendency of a specific setup to produce certain outcomes."
+  },
+  {
+    "front": "What is the frequentist interpretation of probability?",
+    "back": "Probability is the observed relative frequency of an event in an infinite number of repeated trials."
+  },
+  {
+    "front": "What is the Bayesian interpretation of probability?",
+    "back": "Probability is an agent’s subjective degree of belief or state of knowledge."
+  },
+  {
+    "front": "What is a literal population in statistics?",
+    "back": "A real, countable group of individuals from which a sample is literally drawn."
+  },
+  {
+    "front": "What is a virtual population in statistics?",
+    "back": "Repeated measurements vary slightly due to finite precision, conceptualized as draws from a hidden theoretical distribution."
+  },
+  {
+    "front": "What is a metaphorical population in statistics?",
+    "back": "Even with complete data, it is useful to act as if observations were drawn from an imaginary population that physically does not exist."
+  },
+  {
+    "front": "What are the two basic rules of probability?",
+    "back": "The probability of any event must be between 0 and 1 (inclusive), and the sum of probabilities of all possible outcomes in a sample space must equal 1."
+  },
+  {
+    "front": "What is the addition rule for probability?",
+    "back": "P(A∪B) = P(A) + P(B) - P(A∩B). If A and B are mutually exclusive, P(A∪B) = P(A) + P(B)."
+  }
+]
