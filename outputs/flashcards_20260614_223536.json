@@ -1,0 +1,27 @@
+[
+  {
+    "front": "What is the core idea behind the statistical workflow, as described by the central dogma of statistics?",
+    "back": "The analysis of a small random sample enables drawing inferences about the entire population.",
+    "starred": false
+  },
+  {
+    "front": "Explain the difference between the frequentist and Bayesian interpretations of probability.",
+    "back": "Frequentist probability is the long-run relative frequency of outcomes in repeated trials, applicable to random processes. Bayesian probability is an agent's subjective degree of belief or state of knowledge, applicable to any statement.",
+    "starred": true
+  },
+  {
+    "front": "What are the three types of populations discussed in the context of statistical inference?",
+    "back": "Literal population (real, countable group), Virtual population (theoretical distribution for repeated measurements), and Metaphorical population (imaginary population for complete data to apply probability machinery).",
+    "starred": false
+  },
+  {
+    "front": "What is the fundamental assumption of the Naive Bayes classifier that allows for the factorization of the likelihood?",
+    "back": "The assumption is that features are conditionally independent given the class (X_i ⊥ ⊥ X_j | C).",
+    "starred": false
+  },
+  {
+    "front": "Define the generalization error and its relationship to overfitting and underfitting.",
+    "back": "Generalization error (or generalization gap) is the difference between the training error and the expected error on new, unseen data (ΔE = E_new - E_train). It is closely related to the overfitting/underfitting issue.",
+    "starred": false
+  }
+]

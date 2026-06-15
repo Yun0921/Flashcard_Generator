@@ -7,7 +7,7 @@
   {
     "front": "What is the primary goal of predictive modeling in machine learning?",
     "back": "The primary goal is to correctly predict new, unseen instances, which is referred to as having high generalization ability.",
-    "starred": true
+    "starred": false
   },
   {
     "front": "Why is it important to assess a model's generalization capability?",

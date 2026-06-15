@@ -1,42 +1,52 @@
 [
   {
     "front": "What is the central dogma of statistics?",
-    "back": "The analysis of a small random sample enables drawing inferences about the entire population."
+    "back": "The analysis of a small random sample enables drawing inferences about the entire population.",
+    "starred": false
   },
   {
     "front": "What are the three main components of statistical thinking?",
-    "back": "Probability theory, descriptive statistics, and inferential statistics."
+    "back": "Probability theory, descriptive statistics, and inferential statistics.",
+    "starred": true
   },
   {
     "front": "Describe the frequentist interpretation of probability.",
-    "back": "Probability is the observed relative frequency of an event in an infinite number of repeated trials. It is not applicable to single outcomes."
+    "back": "Probability is the observed relative frequency of an event in an infinite number of repeated trials. It is not applicable to single outcomes.",
+    "starred": true
   },
   {
     "front": "Describe the Bayesian interpretation of probability.",
-    "back": "Probability is an agent's subjective degree of belief or state of knowledge. It is applicable to any statement, even without a random process."
+    "back": "Probability is an agent's subjective degree of belief or state of knowledge. It is applicable to any statement, even without a random process.",
+    "starred": false
   },
   {
     "front": "What is a literal population in statistics?",
-    "back": "A real, countable group of individuals from which a sample is literally drawn."
+    "back": "A real, countable group of individuals from which a sample is literally drawn.",
+    "starred": false
   },
   {
     "front": "What is a virtual population in statistics?",
-    "back": "An abstract set of all values obtainable by repeating the same measurement procedure under identical conditions, often used to model measurement noise."
+    "back": "An abstract set of all values obtainable by repeating the same measurement procedure under identical conditions, often used to model measurement noise.",
+    "starred": false
   },
   {
     "front": "What is a metaphorical population in statistics?",
-    "back": "An imaginary set of alternative realisations if the same data-generating situation was repeated, used to apply probability and statistics even with complete data."
+    "back": "An imaginary set of alternative realisations if the same data-generating situation was repeated, used to apply probability and statistics even with complete data.",
+    "starred": false
   },
   {
     "front": "What is the addition rule for probabilities?",
-    "back": "P(A∪B) = P(A) + P(B) - P(A∩B). If A and B are mutually exclusive, P(A∪B) = P(A) + P(B)."
+    "back": "P(A∪B) = P(A) + P(B) - P(A∩B). If A and B are mutually exclusive, P(A∪B) = P(A) + P(B).",
+    "starred": false
   },
   {
     "front": "What is the multiplication rule for probabilities?",
-    "back": "P(A∩B) = P(A) * P(B|A). If A and B are independent, P(A∩B) = P(A) * P(B)."
+    "back": "P(A∩B) = P(A) * P(B|A). If A and B are independent, P(A∩B) = P(A) * P(B).",
+    "starred": false
   },
   {
     "front": "Define conditional probability.",
-    "back": "The probability of event B occurring given that event A has already occurred, denoted as P(B|A). It is calculated as P(A,B) / P(A)."
+    "back": "The probability of event B occurring given that event A has already occurred, denoted as P(B|A). It is calculated as P(A,B) / P(A).",
+    "starred": false
   }
 ]

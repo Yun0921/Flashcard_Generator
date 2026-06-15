@@ -1,0 +1,52 @@
+[
+  {
+    "front": "What are the three key components of Machine Learning?",
+    "back": "Representation, Evaluation, and Optimisation.",
+    "starred": false
+  },
+  {
+    "front": "What is 'Representation' in Machine Learning?",
+    "back": "The formal language in which the machine expresses its learning models and the data, defining the feature space and the hypothesis space.",
+    "starred": true
+  },
+  {
+    "front": "What is 'Evaluation' in Machine Learning?",
+    "back": "A model-internal scoring criterion that the algorithm uses to prefer one model over another, typically involving a loss or cost function.",
+    "starred": false
+  },
+  {
+    "front": "What is 'Optimisation' in Machine Learning?",
+    "back": "The algorithm that searches the hypothesis space for the lowest-loss model and returns it.",
+    "starred": false
+  },
+  {
+    "front": "What is inductive bias in Machine Learning?",
+    "back": "Assumptions baked into the choice of a model (representation) that guide the learning process and enable generalization to unseen data.",
+    "starred": false
+  },
+  {
+    "front": "What is the 'Curse of Dimensionality' in Machine Learning?",
+    "back": "The challenges that arise in high-dimensional spaces, such as exponentially growing data requirements for instance-based learning and the concentration of data points near boundaries.",
+    "starred": false
+  },
+  {
+    "front": "What are the two main types of Machine Learning algorithms based on data availability?",
+    "back": "Supervised learning (targets/labels available) and Unsupervised learning (no targets/labels available).",
+    "starred": false
+  },
+  {
+    "front": "What is the difference between parametric and non-parametric models in Machine Learning?",
+    "back": "Parametric models have a fixed number of parameters, while non-parametric models have a number of parameters that grows with the data.",
+    "starred": false
+  },
+  {
+    "front": "What does the bias-variance trade-off describe in Machine Learning?",
+    "back": "The relationship between a model's complexity, its bias (error from erroneous assumptions), and its variance (error from sensitivity to training data fluctuations), aiming to minimize total error.",
+    "starred": false
+  },
+  {
+    "front": "What are the five schools of Machine Learning?",
+    "back": "Symbolists, Bayesians, Connectionists, Evolutionaries, and Analogizers.",
+    "starred": false
+  }
+]
